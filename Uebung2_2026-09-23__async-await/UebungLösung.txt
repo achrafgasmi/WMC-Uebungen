@@ -1,0 +1,13 @@
+4 · Jetzt du! (erst Vorhersage, dann ausführen)
+
+-1. Vorhersage: In demo.ts, Lauf 2 (Mechanische Tastatur + abgelehnte Karte): Welche Konsole entsteht, welche Zeilen fehlen vergl. Lauf 1? Erst entscheiden, dann deno run demo.ts.
+--> Bei Lauf1 funktioniert die ganze Pipeline: Die Bestellung wird erstellt, die Bezahlung und die Lieferung werden funktionieren und am Ende kommt "Pipeline fertig".
+Bei Lauf2 wird die Bestellung auch erstellt, aber die Karte wird bei der Bezahlung abgelehnt. Dadurch entsteht ein PaymentError. Im Vergleich zu Lauf1 fehlen Bezahlung, die Lieferung und "Pipeline fertig". Die "finally" wird trotzdem ausgegeben.
+
+
+-2. Erweiterung: Baue in pipelineGranular eine vierte Stufe „reklamieren" mit eigenem Error-Typ ClaimError, wirft bei wenig Kundenzufriedenheit. Fangen in einer eigenen try/catch-Stufe oder der Pipeline?
+-->Lösung ist in demo.ts
+
+
+-3. Interleaving zum 18.9.: Wie hängt die Message-Queue-Callback-Logik mit Promise-Zuständen (pending → settled) zusammen? 2–3 Sätze. Hilfestellung: Recap vom 18.9.
+-->ein Promise ist am anfang pending. wenn es fertig ist, wird dann entweder "fulfilled" oder "rejected", beide werden als settled bezeichnet. Das heißt wenn es settled ist, wird passende Callback von .then() oder .catch() ind ie Queue gelegt dann ausgeführt.
