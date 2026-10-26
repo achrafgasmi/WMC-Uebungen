@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Meine Serienliste</title>
+
+    <style>
+      body {
+        max-width: 800px;
+        margin: 40px auto;
+        padding: 0 16px;
+        font-family: Arial, helvetica, sans-serif;
+      }
+
+      form {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 24px;
+      }
+
+      input,
+      select,
+      button {
+        padding: 8px;
+      }
+
+      input {
+        flex: 1;
+      }
+
+      li {
+        margin: 12px 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Meine Serienliste</h1>
+
+    <form id="serien-form">
+      <input id="titel" placeholder="Serientitel" required />
+
+      <select id="status">
+        <option value="geplant">Geplant</option>
+        <option value="schaue_ich">Schaue ich gerade</option>
+        <option value="abgeschlossen">Abgeschlossen</option>
+      </select>
+
+      <button type="submit">Hinzufügen</button>
+    </form>
+
+    <ul id="serien-liste"></ul>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

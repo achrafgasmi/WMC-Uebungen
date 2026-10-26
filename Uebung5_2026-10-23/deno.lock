@@ -1,0 +1,17 @@
+{
+  "version": "5",
+  "specifiers": {
+    "npm:drizzle-orm@1.0.0-rc.4": "1.0.0-rc.4"
+  },
+  "npm": {
+    "drizzle-orm@1.0.0-rc.4": {
+      "integrity": "sha512-BT+pf+qoiYHqltoA88Jmf6ilGMXPlpfE0hEJKc2adRtMCAl25Swk/t5gXcWxZNAwdtf3F5gCd2FpeOyP/pT0Hw=="
+    }
+  },
+  "workspace": {
+    "dependencies": [
+      "jsr:@std/assert@1",
+      "npm:drizzle-orm@1.0.0-rc.4"
+    ]
+  }
+}

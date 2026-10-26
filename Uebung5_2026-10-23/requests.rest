@@ -1,0 +1,24 @@
+GET http://localhost:8000/serien
+
+###
+
+POST http://localhost:8000/serien
+Content-Type: application/json
+
+{
+  "titel": "Dark",
+  "status": "geplant"
+}
+
+###
+
+PATCH http://localhost:8000/serien/86861be6-9026-4a81-b084-e2ba28da76e8
+Content-Type: application/json
+
+{
+  "status": "abgeschlossen"
+}
+
+###
+
+DELETE http://localhost:8000/serien/e5efef1f-1e2d-42f2-962e-63788dd784f2
