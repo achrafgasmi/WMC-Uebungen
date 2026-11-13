@@ -1,0 +1,16 @@
+.header {
+  background-color: #720229;
+  padding: 1rem;
+}
+
+.header-title {
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.header-subtitle {
+  color: rgb(223, 221, 221);
+  font-size: 1.25rem;
+
+}

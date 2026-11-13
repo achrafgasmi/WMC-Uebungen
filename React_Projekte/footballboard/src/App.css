@@ -1,0 +1,35 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.app-page {
+    background-color: #f5f0f2;
+    min-height: 100vh;
+    padding: 1px;
+}
+
+h2 {
+    color: #800020;
+    margin-left: 1%;
+}
+
+.match-table {
+    width: 99%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    text-align: left;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.match-table th {
+    padding: 15px;
+    background-color: #800020;
+    color: white;
+}
