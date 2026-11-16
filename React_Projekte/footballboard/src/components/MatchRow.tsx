@@ -1,27 +1,27 @@
 import './MatchRow.css'
+import StatusBadge from './StatusBadge.tsx'
+import type { Match } from '../types/match.ts'
+
 
 interface MatchRowProps{
-    homeTeam: string;
-    awayTeam: string;
-    league: string;
-    time: string;
-    status: string;
+    match: Match;
 }
 
-function MatchRow(props: MatchRowProps){
+function MatchRow({match}: MatchRowProps){
     const rowClick= () =>{
-        console.log(props.homeTeam + " vs " + props.awayTeam );
+        console.log(match.homeTeam + " vs " + match.awayTeam );
+        console.log("Status:" + match.status);
     }
     return(
         <tr className="MatchRow" onClick={rowClick}>
-            <td>{props.homeTeam}</td>
-            <td>{props.awayTeam}</td>
-            <td>{props.league}</td>
-            <td>{props.time}</td>
-            <td><span className="status">{props.status}</span></td>
+            <td>{match.homeTeam}</td>
+            <td>{match.awayTeam}</td>
+            <td>{match.league}</td>
+            <td>{(match.status==="cancelled")? "-" : (match.time ?? "TBD")}</td>
+            <td><StatusBadge status={match.status} /></td>
         </tr>
     );
 };
 
-export default MatchRow
+export default MatchRow;
 

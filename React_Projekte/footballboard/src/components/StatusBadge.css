@@ -1,0 +1,26 @@
+.status-pill {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.status-upcoming {
+    background-color: #f5e2e9;
+    color: #720229;
+    
+}
+
+.status-live {
+    background-color: #e2f5e2;
+    color: #1a7f1a;
+  
+}
+.status-finished {
+    background-color: #e2e2e2;
+    color: #4d4d4d;
+}
+.status-cancelled {
+    background-color: #a90b0b;
+    color: white;
+}

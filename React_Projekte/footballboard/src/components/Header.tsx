@@ -1,15 +1,17 @@
+import type { ReactNode } from 'react';
 import './Header.css'
 
 interface HeaderProps {
     title: string;
-    subtitle: string;
+    children?: ReactNode;
+    showSubtitle?: boolean;
 }
 
-function Header(props: HeaderProps) {
+function Header({title, children, showSubtitle = true}: HeaderProps) {
     return(
         <header className="header">
-            <h1 className="header-title"> {props.title}</h1>
-            <p className="header-subtitle">{props.subtitle}</p>
+            <h1 className="header-title"> {title}</h1>
+            {showSubtitle && <p className="header-subtitle">{children}</p>}
         </header>
     )
 }

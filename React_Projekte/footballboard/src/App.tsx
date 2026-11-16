@@ -1,15 +1,37 @@
 import Header from './components/Header'
 import './App.css'
 import MatchRow from './components/MatchRow.tsx';
+import { matches } from './data/matches.ts';
+import { useState } from 'react';
+import type { MatchStatus } from './types/match.ts';
 
 function App() {
+  const[filter, setFilter] = useState<MatchStatus | "all">("all");
+
+  const filteredMatches = filter === "all"? matches : matches.filter(match => match.status === filter);
+
   return (
     <div className="app-page">
-      <Header title='Football Board' 
-              subtitle='All matches. All scores. One place' 
-      />
+      <Header title='Football Board'>
+              All matches. All scores. One place
+      </Header>
 
-      <h2>Upcoming Matches</h2>
+      <div className='filter-buttons'>
+        <button className= {filter === "all"? "active" : ""}
+                onClick={()=>setFilter("all")}>All Matches</button>
+
+        <button className= {filter === "upcoming"? "active" : ""}
+                onClick={()=>setFilter("upcoming")}>Upcoming</button>
+
+        <button className= {filter === "live"? "active" : ""}
+                onClick={()=>setFilter("live")}>Live</button>
+
+        <button className= {filter === "cancelled"? "active" : ""}
+                onClick={()=>setFilter("cancelled")}>Cancelled</button>
+
+        <button className= {filter === "finished"? "active" : ""}
+                onClick={()=>setFilter("finished")}>Finished</button>
+      </div>
       <table className="match-table">
         <thead>
           <tr>
@@ -22,27 +44,9 @@ function App() {
 
         </thead>
         <tbody>
-          <MatchRow
-            homeTeam="FC Barcelona"
-            awayTeam="Real Madrid"
-            league="La Liga"
-            time="20:00"
-            status="Upcoming"
-          />
-          <MatchRow
-            homeTeam="Paris Saint-Germain"
-            awayTeam="AC Monaco"
-            league="Ligue 1"
-            time="21:00"
-            status="Upcoming"
-          />
-          <MatchRow
-            homeTeam="FC Bayern Munich"
-            awayTeam="Borussia Dortmund"
-            league="Bundesliga"
-            time="20:00"
-            status="Upcoming"
-          />
+          {filteredMatches.map((match) =>(
+            <MatchRow key= {match.id} match = {match}/>
+          ))}
 
           
         </tbody>

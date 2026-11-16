@@ -33,3 +33,20 @@ h2 {
     background-color: #800020;
     color: white;
 }
+
+.filter-buttons button {
+    margin: 10px;
+    padding: 10px;
+    background-color: #9d9698;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.filter-buttons button.active{
+    background-color: #800020;
+}
+
+.filter-buttons button:hover {
+    background-color: #800020;
+}
